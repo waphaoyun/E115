@@ -1,0 +1,31 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0xF0</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x707</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x70F</ECU_diag_resp>  
+    <target_version>fanlingling</target_version>  
+    <security_mask>0xF253CC9D</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>ALCM_S32K_Drive_20181226_V01.00.bin</filename>  
+        <checksum alg="CRC-32">a</checksum> 
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>ALCM_C229_20190116_HW04_PFLASH.bin</filename>  
+        <checksum alg="CRC-32">b</checksum> 
+    </image>  
+    <image index="3"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>ALCM_C229_20190116_HW04_DFLASH.bin</filename>  
+        <checksum alg="CRC-32">c</checksum> 
+    </image> 
+</xl4_pkg_update_install>

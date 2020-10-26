@@ -1,0 +1,33 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x48</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x7A3</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x7AB</ECU_diag_resp>  
+    <target_version>v2.18</target_version>  
+    <security_mask>0x6FB51729</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>FAW_H72_MCU1_App_LH71910A_Fill.bin</filename>  
+        <checksum alg="CRC-32"/>  
+        <block index="1"> 
+            <start_address>0x80018000</start_address>  
+            <size>0xe8000</size> 
+        </block> 
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>FAW_H72_MCU2_App_DH71910A_Fill.bin</filename>  
+        <checksum alg="CRC-32"></checksum>  
+        <block index="1">
+            <start_address>0x80018000</start_address>
+            <size>0xe8000</size>
+        </block>
+    </image> 
+</xl4_pkg_update_install>

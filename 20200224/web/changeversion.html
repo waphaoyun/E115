@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            color: blue;
+            font-size: xx-large;
+        }
+        .wap{
+        ;
+        }
+        table{
+            width: 80%;
+        }
+        #tishi{
+            white-space: nowrap;
+        }
+        /*.infoTextarea.change::-webkit-input-placeholder {*/
+        /*    color: red;*/
+        /*}*/
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            urlinfo = window.location.href; //获取当前页面的url
+            len = urlinfo.length;//获取url的长度
+            offset = urlinfo.indexOf("?");//设置参数字符串开始的位置
+            newsidinfo = urlinfo.substr(offset, len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+            newsids = newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+            newsid = newsids[1];//得到参数值
+            newsname = newsids[0];//得到参数名字
+            // alert(newsid);
+            // alert(newsname);
+            var spanx = $("#xtest");
+            spanx.html(newsid);
+        })
+
+    </script>
+</head>
+<body>
+<form action="changeversion" method="POST" >
+
+    <table border="1"  align="center">
+        <tr>
+
+            <td align="left"  class="wap">
+                <select id="select_ecu" name="waphaoyun">
+                    <option value="">--请选择ECU--</option>
+                    <option value="egsm">egsm</option>
+                    <option value="dms">dms</option>
+                    <option value="eps">eps</option>
+                    <option value="acm">acm</option>
+                    <option value="adv">adv</option>
+                    <option value="scm">scm</option>
+                    <option value="mcu1">mcu1</option>
+                    <option value="amp">amp</option>
+                    <option value="acm">acm</option>
+                    <option value="dcdc">dcdc</option>
+                    <option value="ddcu">ddcu</option>
+                    <option value="dscu">dscu</option>
+                    <option value="headlamp">headlamp</option>
+                    <option value="hud">hud</option>
+                    <option value="lcda1">lcda1</option>
+                    <option value="lcda2">lcda2</option>
+                    <option value="mcu">mcu</option>
+                    <option value="pdcu">pdcu</option>
+                    <option value="plg">plg</option>
+                    <option value="rearlamp">rearlamp</option>
+                    <option value="rldcu">rldcu</option>
+                    <option value="rrdcu">rrdcu</option>
+                    <option value="dct">dct</option>
+                    <option value="pscu">pscu</option>
+                    <option value="adb2">adb2</option>
+                    <option value="adb1">adb1</option>
+                    <option value="radarf">radarf</option>
+                    <option value="ifc">ifc</option>
+                    <option value="ecas">ecas</option>
+                    <option value="fdm">fdm</option>
+                    <option value="bms">bms</option>
+
+
+
+                </select>
+
+            </td>
+<!--            <td></td>-->
+
+        </tr>
+        <tr>
+            <td>
+                <span id="xtest" name="xtest" ></span>
+            </td>
+
+        </tr>
+        <tr>
+<!--            <td>-->
+<!--                <span id="tishi">填写target_version版本号:</span>-->
+<!--            </td>-->
+            <td>
+            <input type="text" name="verison" placeholder="填写target_version" />
+            </td>
+        </tr>
+
+<!--        <tr>-->
+<!--          <input type="text" name="verison"  />-->
+<!--        </tr>-->
+
+        <tr>
+            <td  class="wap">
+                <input id="submit" type="submit" value="修改XML文件版本"/>
+            </td>
+<!--            <td></td>-->
+
+        </tr>
+
+        <tr>
+            <td  class="wap">
+                <a href="index0.html">返回首页</a>
+            </td>
+<!--            <td></td>-->
+        </tr>
+
+        
+
+
+    </table>
+
+
+
+
+</form>
+</body>
+</html>

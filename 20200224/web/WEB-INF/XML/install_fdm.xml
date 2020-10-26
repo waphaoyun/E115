@@ -1,0 +1,20 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x64</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x776</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x77E</ECU_diag_resp>  
+    <target_version>v2.18</target_version>  
+    <security_mask>0xEAA1E785</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>MCU_APP_V1011_20191230.bin</filename>  
+        <checksum alg="CRC-32"></checksum> 
+       
+    </image>  
+</xl4_pkg_update_install>

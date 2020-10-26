@@ -1,0 +1,41 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x92</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x7F0</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x7F8</ECU_diag_resp>  
+    <target_version>sdfs</target_version>  
+    <security_mask>0x55ACF799</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>X8578_SBL_FAW.bin</filename>  
+        <checksum alg="CRC-32">0x8cdb4fa6</checksum>  
+        <block index="1"> 
+            <start_address>0x40000000</start_address>  
+            <size>0xc</size> 
+        </block>  
+        <block index="2"> 
+            <start_address>0x40000020</start_address>  
+            <size>0x38</size> 
+        </block>  
+        <block index="3"> 
+            <start_address>0x40000060</start_address>  
+            <size>0x14414</size> 
+        </block>  
+        <block index="4"> 
+            <start_address>0x40014480</start_address>  
+            <size>0x2c4</size> 
+        </block> 
+    </image>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>MCU_APP.bin</filename>  
+        <checksum alg="CRC-32">CF539CA6</checksum> 
+    </image> 
+</xl4_pkg_update_install>

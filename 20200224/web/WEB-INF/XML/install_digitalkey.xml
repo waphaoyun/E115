@@ -1,0 +1,33 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x49</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x767</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x76f</ECU_diag_resp>  
+    <target_version>v2.18</target_version>  
+    <security_mask>0xF6D443FD</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>DigitalKEY_flashdriver.bin</filename>  
+        <checksum alg="CRC-32"></checksum> 
+        <block index="1"> 
+            <start_address>0x80018000</start_address>  
+            <size>0xe8000</size> 
+        </block> 
+    </image>
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>DigitalKEY_APP.bin</filename>  
+        <checksum alg="CRC-32"></checksum> 
+        <block index="1"> 
+            <start_address>0x80018000</start_address>  
+            <size>0xe8000</size> 
+        </block> 
+    </image>	
+</xl4_pkg_update_install>

@@ -1,0 +1,61 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x7B</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x711</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x719</ECU_diag_resp>  
+    <target_version>v2.2</target_version>  
+    <security_mask>0xD39A6ED2</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>flashdrv_g.bin</filename>  
+        <checksum alg="CRC-32"/>  
+        <block index="1"> 
+            <start_address>0x70100000</start_address>  
+            <size>0xc20</size> 
+        </block> 
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>APP_Align_P20R3Patch.bin</filename>  
+        <checksum alg="CRC-32"></checksum>  
+        <block index="1">
+            <start_address>0x80034000</start_address>
+            <size>0x200</size>
+        </block>
+        <block index="2">
+            <start_address>0x80034500</start_address>
+            <size>0x1300</size>
+        </block>
+        <block index="3">
+            <start_address>0x800a0000</start_address>
+            <size>0x5b820</size>
+        </block>
+        <block index="4">
+            <start_address>0x800fb8a0</start_address>
+            <size>0xd40c0</size>
+        </block>
+        <block index="5">
+            <start_address>0x801fe020</start_address>
+            <size>0x1fe0</size>
+        </block>
+        <block index="6">
+            <start_address>0x80300000</start_address>
+            <size>0x26ba0</size>
+        </block>
+        <block index="7">
+            <start_address>0x803f7c00</start_address>
+            <size>0x60</size>
+        </block>
+        <block index="8">
+            <start_address>0x803f7ca0</start_address>
+            <size>0x60</size>
+        </block>
+    </image> 
+</xl4_pkg_update_install>

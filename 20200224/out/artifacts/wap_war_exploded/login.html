@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            text-align: left;
+            /*text-justify: inter-character*/
+            font-size: xx-large;
+            font-weight: bold;
+        }
+       form{
+           font-size: xx-large;
+           font-weight: bold;
+       }
+        .divForm{
+            position: absolute;/*绝对定位*/
+            width: 300px;
+            height: 200px;
+
+            border: 1px solid cadetblue;
+            text-align: center;/*(让div中的内容居中)*/
+            top: 50%;
+            left: 86%;
+            margin-top: -200px;
+            margin-left: -150px;
+            background-color: white;
+        }
+        body{
+            /*background: url("pic/jt_new_1.jpg") no-repeat center;*/
+            /* 加载背景图片 */
+            background-image: url("pic/jt_new_1.jpg");
+            /* 背景图垂直、水平均居中 */
+            background-position: center;
+            /* 背景图不平铺 */
+            background-repeat: no-repeat;
+            /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+            background-attachment: fixed;  /*此条属性必须设置否则可能无效*/
+            /* 让背景图基于容器大小伸缩 */
+            background-size: cover;
+            /*background-color: #000000;*/
+        }
+        #button {
+            border-radius: 16px;
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 7px 35px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 24px 1px;
+            cursor: pointer;
+        }
+        #username{
+            height: 80%;
+            margin-top: 35px;
+        }
+        #password{
+            margin-top: 25px;
+            height: 80%;
+        }
+    </style>
+</head>
+<body >
+<div class="divForm">
+
+    <form  action="loginServlet" method="post">
+        <table align="center">
+            <tr>
+
+                <td>
+                    <input id="username" type="text" name="username" placeholder="请输入用户名">
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <input id="password" type="password" name="password" placeholder="请输入密码">
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                <input id="button" type="submit" value="登录">
+                </td>
+            </tr>
+        </table>
+<!--        用户名:<input type="text" name="username"> <br>-->
+<!--        密码:<input type="password" name="password"><br>-->
+
+
+
+    </form>
+</div>
+</body>
+</html>

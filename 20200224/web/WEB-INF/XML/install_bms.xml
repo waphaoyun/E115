@@ -1,0 +1,34 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x96</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x7C0</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x7C8</ECU_diag_resp>  
+    <target_version>v2.18</target_version>  
+    <security_mask>0x59DB7D73</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>CB.bin</filename>  
+        <checksum alg="CRC-32">0x01020304</checksum> 
+        
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>ASW0.bin</filename>  
+        <checksum alg="CRC-32">0x01020304</checksum>  
+       
+    </image> 
+	<image index="3"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>DS.bin</filename>  
+        <checksum alg="CRC-32">0x01020304</checksum>  
+       
+    </image> 
+</xl4_pkg_update_install>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xl4_pkg_update_install>
+  <version>0.1</version>
+  <ECU_ID>0x7A</ECU_ID>
+  <ECU_transfer_service>SID34</ECU_transfer_service>
+  <ECU_diag_phy_req>0x735</ECU_diag_phy_req>
+  <ECU_diag_resp>0x73D</ECU_diag_resp>
+  <target_version>0.0.1</target_version>
+  <security_mask>0xDF6A2E52</security_mask>
+  <support_request_status>
+    <installation>false</installation>
+  </support_request_status>
+  <image index="1">
+    <format>bin</format>
+    <type>app</type>
+    <filename>adb2.app</filename>
+    <checksum alg="CRC-32">b
+    </checksum>
+  </image>
+</xl4_pkg_update_install>

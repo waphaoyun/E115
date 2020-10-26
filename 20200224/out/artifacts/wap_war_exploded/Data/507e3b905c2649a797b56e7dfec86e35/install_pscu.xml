@@ -1,0 +1,31 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x5B</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x763</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x76B</ECU_diag_resp>  
+    <target_version>v2.2</target_version>  
+    <security_mask>0xA4CCE79C</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>3610820-DB03V0113-CRC0xA062-ALL.bin</filename>  
+        <checksum alg="CRC-32"></checksum>  
+        <block index="1">
+            <start_address>0x400</start_address>
+            <size>0x1000</size>
+        </block>
+        <block index="2">
+            <start_address>0x20000</start_address>
+            <size>0xd000</size>
+        </block>
+        <block index="3">
+            <start_address>0x30000</start_address>
+            <size>0xe000</size>
+        </block>
+    </image> 
+</xl4_pkg_update_install>

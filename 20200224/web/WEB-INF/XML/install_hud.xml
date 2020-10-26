@@ -1,0 +1,33 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x61</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x774</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x77C</ECU_diag_resp>  
+    <target_version>321W-0409</target_version>  
+    <security_mask>0xBBB4B937</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>HUD_CAN_FOR_OTA.bin</filename>  
+        <checksum alg="CRC-32">0x74F59D12</checksum>  
+        <block index="1">
+            <start_address>0xe000</start_address>
+            <size>0x1CFF0</size>
+        </block>
+    </image> 
+	<image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>HUD_SOC_FOR_OTA.bin</filename>  
+        <checksum alg="CRC-32">0xBBB70233</checksum>  
+        <block index="1">
+            <start_address>0x40000</start_address>
+            <size>0x100001</size>
+        </block>
+    </image> 
+</xl4_pkg_update_install>

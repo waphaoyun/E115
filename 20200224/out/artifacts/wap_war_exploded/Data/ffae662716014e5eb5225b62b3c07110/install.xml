@@ -1,0 +1,41 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x5A</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x762</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x76A</ECU_diag_resp>  
+    <target_version>sdfs</target_version>  
+    <security_mask>0xA703395D</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>SCCU_FlashDriver.bin</filename>  
+        <checksum alg="CRC-32">1</checksum>  
+        <block index="1"> 
+            <start_address>0x20002800</start_address>  
+            <size>0x2f0</size> 
+        </block> 
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>SCCU_C229_APP_SW-1008_20200408.bin</filename>  
+        <checksum alg="CRC-32">b</checksum>  
+        <block index="1">
+            <start_address>0x8000</start_address>
+            <size>0xbf</size>
+        </block>
+        <block index="2">
+            <start_address>0x8400</start_address>
+            <size>0x7bff</size>
+        </block>
+        <block index="3">
+            <start_address>0x10000</start_address>
+            <size>0x7ab4</size>
+        </block>
+    </image> 
+</xl4_pkg_update_install>

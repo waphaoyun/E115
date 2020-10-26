@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            color: blue;
+            font-size: xx-large;
+        }
+        .wap{
+        ;
+        }
+        table{
+            width: 80%;
+        }
+        #tishi{
+            white-space: nowrap;
+        }
+        /*.infoTextarea.change::-webkit-input-placeholder {*/
+        /*    color: red;*/
+        /*}*/
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        //在页面加载完成后
+        $(function () {
+            // $("#submit").click(function () {
+            //     $(":file").reset;
+            // })
+
+            $(":file").click(function () {
+                // alert("hahha");
+                this.value="";
+            })
+
+            //给username绑定blur事件
+           // $("#select_ecu").select(function (){
+            $("#select_ecu").change(function () {
+                    var checkvalue=$(this).val();
+                    // alert(checkvalue);
+                    var length=0;
+                // $("#filecount1").hide();
+                // $("#filecount2").hide();
+                // $("#filecount3").hide();
+                var span1 = $("#filename1");
+                span1.html("无需使用此输入框");
+                // span1.ccs("color",red);
+                var span2 = $("#filename2");
+                span2.html("无需使用此输入框");
+                // span2.ccs("color",red);
+                var span3 = $("#filename3");
+                span3.html("无需使用此输入框");
+                // span3.ccs("color",red);
+                var photo1=$("#crc1");
+                photo1.attr('placeholder',"不需要checksum");
+                var photo2=$("#crc2");
+                photo2.attr('placeholder',"不需要checksum");
+                var photo3=$("#crc3");
+                photo3.attr('placeholder',"不需要checksum");
+
+
+                // $("div").ajaxError(function(){}
+                $.post("ecuxml", {"checkvalue": checkvalue}, function (data) {
+                    if(data==null){alert("ok");}
+                for (var ever in data.fileNamex)
+                {
+
+                    length++;
+                    // var span=$("#filename1");
+                    // // alert(span);
+                    // $("#filecount"+length).show();
+                    var span = $("#filename"+length);
+                    // span.html("wangtianjiao");
+                    // var span = $("#filename2");
+                    span.html(data.fileNamex[ever]);
+
+                    if(data.crc){
+                    var photo=$("#crc"+length);
+                    photo.attr('placeholder',"请填写checksum");}
+                    // photo.addClass('infoTextarea change')
+                    // $('input').val($('crc1').defaultValue);
+                    // $("#crc"+length).attr('placeholder',"请输入");
+                    // photo.text("dsdfsfd");
+                    // span.ccs("color",green);
+                    // alert(ever);
+                    // span.ccs("color",red);
+                    // span.html(ever)
+                }
+                   if(data.crc){
+                        alert("注意此ECU需要填写checksum")
+                   }
+                });
+
+
+                // $.ajax({
+                //     url:'ecuxml',
+                //     type:'get',
+                //     dataType:'json',
+                //     success:function(ps){
+                //     for (  var ever in ps){
+                //         length++;
+                //     }
+                //     alert(length);
+                //         // $.each(ps,function(index,element){
+                //         //
+                //         // })
+                //
+                //
+                //     }
+                // })
+
+
+
+            })
+
+
+        });
+
+    </script>
+</head>
+<body>
+<form action="upold" method="POST" enctype="multipart/form-data">
+
+    <table border="1"  align="center">
+        <tr>
+
+            <td align="left"  class="wap">
+                <select id="select_ecu" name="waphaoyun">
+                    <option value="">--请选择ECU--</option>
+                    <option value="egsm">egsm</option>
+                    <option value="dms">dms</option>
+                    <option value="eps">eps</option>
+                    <option value="acm">acm</option>
+                    <option value="adv">adv</option>
+                    <option value="scm">scm</option>
+                    <option value="mcu1">mcu1</option>
+                    <option value="amp">amp</option>
+                    <option value="acm">acm</option>
+                    <option value="dcdc">dcdc</option>
+                    <option value="ddcu">ddcu</option>
+                    <option value="dscu">dscu</option>
+                    <option value="headlamp">headlamp</option>
+                    <option value="hud">hud</option>
+                    <option value="lcda1">lcda1</option>
+                    <option value="lcda2">lcda2</option>
+                    <option value="mcu">mcu</option>
+                    <option value="pdcu">pdcu</option>
+                    <option value="plg">plg</option>
+                    <option value="rearlamp">rearlamp</option>
+                    <option value="rldcu">rldcu</option>
+                    <option value="rrdcu">rrdcu</option>
+                    <option value="dct">dct</option>
+                    <option value="pscu">pscu</option>
+                    <option value="adb2">adb2</option>
+                    <option value="adb1">adb1</option>
+                    <option value="radarf">radarf</option>
+                    <option value="ifc">ifc</option>
+                    <option value="ecas">ecas</option>
+                    <option value="fdm">fdm</option>
+                    <option value="bms">bms</option>
+                    <option value="esc">esc</option>
+                    <option value="acu">acu</option>
+                    <option value="rmar">rmar</option>
+                    <option value="sccu">sccu</option>
+                    <option value="ems">ems</option>
+                    <option value="atc">atc</option>
+                    <option value="atmosphere">atmosphere</option>
+                    <option value="pdc">pdc</option>
+                    <option value="bcm">bcm</option>
+                    <option value="digitalkey">digitalkey</option>
+
+                </select>
+
+            </td>
+            <td>
+                <span id="tishi">文件上传提示</span>
+            </td>
+        </tr>
+
+        <tr id="filecount1">
+            <td  class="wap">
+                <input type="file" name="photo1"  />
+                <input type="text" id="crc1" name="crc1" placeholder="不需要CRC1"/>
+            </td>
+
+            <td>
+                <span id="filename1"></span>
+            </td>
+        </tr>
+
+        <tr id="filecount2">
+            <td  class="wap">
+                <input type="file" name="photo2"  />
+                <input type="text" id="crc2" name="crc2" placeholder="不需要CRC2"/>
+            </td>
+            <td>
+                <span id="filename2"></span>
+            </td>
+        </tr>
+
+
+        <tr id="filecount3">
+            <td  class="wap">
+                <input type="file" name="photo3"  />
+                <input type="text" id="crc3" name="crc3" placeholder="不需要CRC3"/>
+            </td>
+            <td>
+                <span id="filename3"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td  class="wap">
+                <input type="text" name="verison" placeholder="请输入软件版本号"/>
+            </td>
+            <td></td>
+        </tr>
+
+<!--        <tr>-->
+<!--            <td  class="wap">-->
+<!--                <input type="text" name="crc" placeholder="请输入CRC"/>-->
+<!--            </td>-->
+<!--            <td></td>-->
+<!--        </tr>-->
+
+        <tr>
+            <td  class="wap">
+                <input id="submit" type="submit" value="点此生成bin与XML文件"/>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td  class="wap">
+                <a href="tiaozhuan">GO TO查看ECU TEST文件</a>
+            </td>
+            <td></td>
+        </tr>
+
+
+<!--        <tr>-->
+<!--            <td  class="wap">-->
+<!--                <a href="changeversion.html">更新target_version</a>-->
+<!--            </td>-->
+<!--            <td></td>-->
+<!--        </tr>-->
+        <tr>
+            <td  class="wap">
+                <a href="howtouse.html">更新日志</a>
+            </td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+
+            <td  class="wap">
+                <a href="logout">退出登录</a>
+            </td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+
+            <td  class="wap">
+                <a href="index.html">测试版，hexview level?</a>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
+</form>
+</body>
+</html>

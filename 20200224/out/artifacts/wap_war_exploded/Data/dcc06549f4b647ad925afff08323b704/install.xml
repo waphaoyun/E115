@@ -1,0 +1,39 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x91</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x7E3</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x7EB</ECU_diag_resp>  
+    <target_version>1</target_version>  
+    <security_mask>0x2EED2E4E</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>flashdriver</type>  
+        <filename>ASW0.bin</filename>  
+        <checksum alg="CRC-32">1</checksum>  
+        <block index="1"> 
+            <start_address>0x80080000</start_address>  
+            <size>0x180000</size> 
+        </block> 
+    </image>  
+    <image index="2"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>ASW1.bin</filename>  
+        <checksum alg="CRC-32">2</checksum>  
+        <block index="1">
+            <start_address>0x80200000</start_address>
+            <size>0x100000</size>
+        </block>
+    </image>  
+    <image index="3"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>Calibration.bin</filename>  
+        <checksum alg="CRC-32">0xBED34802</checksum> 
+    </image> 
+</xl4_pkg_update_install>

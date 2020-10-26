@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            color: blue;
+            font-size: xx-large;
+        }
+        .wap{
+        ;
+        }
+        table{
+            width: 80%;
+        }
+        #tishi{
+            white-space: nowrap;
+        }
+        /*.infoTextarea.change::-webkit-input-placeholder {*/
+        /*    color: red;*/
+        /*}*/
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            urlinfo = window.location.href; //获取当前页面的url
+            len = urlinfo.length;//获取url的长度
+            offset = urlinfo.indexOf("?");//设置参数字符串开始的位置
+            newsidinfo = urlinfo.substr(offset, len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+            newsids = newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+            newsid = newsids[1];//得到参数值
+            newsname = newsids[0];//得到参数名字
+            // alert(newsid);
+            // alert(newsname);
+            var spanx = $("#xtest");
+            spanx.val(newsid);
+        })
+
+    </script>
+</head>
+<body>
+<form action="changexml" method="POST" >
+
+    <table border="1"  align="center">
+
+        <tr>
+            <td>
+                <input type="text" id="xtest" name="xtest" readonly="true" ></input>
+            </td>
+
+        </tr>
+        <tr>
+<!--            <td>-->
+<!--                <span id="tishi">填写target_version版本号:</span>-->
+<!--            </td>-->
+            <td>
+            <input type="text" name="verison" placeholder="填写target_version" />
+            </td>
+        </tr>
+
+<!--        <tr>-->
+<!--          <input type="text" name="verison"  />-->
+<!--        </tr>-->
+
+        <tr>
+            <td  class="wap">
+                <input id="submit" type="submit" value="修改XML文件版本"/>
+            </td>
+<!--            <td></td>-->
+
+        </tr>
+
+        <tr>
+            <td  class="wap">
+                <a href="index0.html">返回首页</a>
+            </td>
+<!--            <td></td>-->
+        </tr>
+
+
+
+
+    </table>
+
+
+
+
+</form>
+</body>
+</html>

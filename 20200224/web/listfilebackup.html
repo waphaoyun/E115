@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html>
+<head>
+    <meta pageEncoding="utf-8" http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Title</title>
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size:20px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            width:100%;
+            font-weight: bold;
+            padding:0px;
+            border-collapse:collapse;
+        }
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+            text-align: center;
+        }
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+            text-align: center;
+
+        }
+        textarea{
+            width:100%;
+            height:100%;
+            border:none;
+            margin:0px;
+        }
+        button {
+            border-radius: 16px;
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .check{
+            color: red;
+        }
+    </style>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+
+
+
+
+
+        //在页面加载完成后
+        $(function(){
+            myAjax();
+        })
+        var myAjax=function(){
+            $.ajax({
+                url:'map1',
+                type:'get',
+                dataType:'json',
+                success:function(ps){
+
+                    var str = "";$('table').html(" <th>VERSION</th><th>ECU_file_name</th><th>状态</th><th>verify_success</th><th>verify_failed</th><th>DESCRIPTION</th><th>删除</th><th>upadate version</th></th><th>上传者</th>");
+                    // str +="<table><thead><tr><th>ID</th><th>ECU_NAME</th><th>DESCRIPTION</th></tr></thead><tbody>";
+                    //遍历数据
+                    $.each(ps,function(index,element){
+                        str +="<tr><td>"+element['version']+"</td><td><a href='map2?tang="+element['id']+  "' >" +element['file_name']+"</a></td><td class='check'>"+element['for_check']+
+                            "</td><td>"+"<button onclick='js_method("+element['id']+")'"+ "type=\"button\">验证通过</button>"+"</td><td>"+"<button onclick='js_method_fail("+element['id']+")'"+ "type=\"button\">验证失败</button>" +"</td><td><textarea class='wlan' onblur='js_method_blur(this,"+element['id']+   ")'>"+element['description'] +
+                            "</textarea></td><td>"+"<button onclick='js_method_del("+element['id']+")'"+ "type=\"button\">删除</button>"+ "</td><td>" +"<button onclick='js_method_changexml("+element['id']+")'"+ "type=\"button\">更新版本</button>"+ "</td><td>"  +element['user'] + "</td></tr>";
+                        // str +="<tr><td>"+element['id']+"</td><td><a href='javascript:void(0)' onclick='js_method("+element['id']+   ")' >" +element['file_name']+"</a></td><td>"+element['description']+"</td></tr>";
+                    })
+
+                    $('table').append(str);
+                }
+            })
+        }
+        function js_method_changexml(id){
+            alert(id);
+            // alert(file_name1);
+            var result=confirm("确认更新版本？");
+            if(result==true) {
+                url = "changexml.html?id="+id;//此处拼接内容
+                window.location.href = url;
+            }else {
+                ;
+            }
+        }
+        function js_method(id){
+            // alert(id);
+            // alert(file_name1);
+            var result=confirm("是否验证成功？");
+            if(result==true) {
+                $.post("success", {"tang": id}, function () {
+                    // update();
+                    myAjax();
+                });
+            }else {
+                ;
+            }
+        }
+        function js_method_del(id){
+            // alert("del");
+            // alert(file_name1);
+            var result=confirm("确认删除？");
+            if(result==true) {
+                $.post("del", {"tang": id}, function () {
+                    // update();
+                    myAjax();
+                });
+            }else {
+                ;
+            }
+        }
+
+        function js_method_fail(id){
+            // alert(id);
+            // alert(file_name1);
+            var result=confirm("验证失败？");
+            if(result==true) {
+                $.post("fail", {"tang": id}, function () {
+                    myAjax();
+                    // update();
+                });
+            }
+        }
+        function  js_method_blur(val,id) {
+            var result=confirm("是否更新备注？");
+            if(result==true) {
+                $.post("miaoshu", {"description": val.value, "id": id}, function () {
+                    myAjax();
+                    // update();
+                });
+            }else {
+                myAjax();
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<td  class="wap">
+    <a  href="jump2index" id="wangtianjiao">返回上传ECU源文件</a>
+</td>
+<table class="gridtable">
+    <tr>
+        <th>ECU</th>
+        <th>ECU_file_name</th>
+
+        <th>Status</th>
+        <th>verify_success</th>
+        <th>verify_failed</th>
+        <th>DESCRIPTION</th>
+        <th>删除</th>
+    </tr>
+</table>
+
+</body>
+</html>

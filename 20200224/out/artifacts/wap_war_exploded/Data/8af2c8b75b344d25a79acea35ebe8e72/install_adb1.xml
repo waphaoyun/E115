@@ -1,0 +1,27 @@
+
+<xl4_pkg_update_install> 
+    <version>0.1</version>  
+    <ECU_ID>0x79</ECU_ID>  
+    <ECU_transfer_service>SID34</ECU_transfer_service>  
+    <ECU_diag_phy_req>0x735</ECU_diag_phy_req>  
+    <ECU_diag_resp>0x73D</ECU_diag_resp>  
+    <target_version>tmac_2.0</target_version>  
+    <security_mask>0xDF6A2E52</security_mask>  
+    <support_request_status> 
+        <installation>false</installation> 
+    </support_request_status>  
+    <image index="1"> 
+        <format>bin</format>  
+        <type>app</type>  
+        <filename>C229_ADB_Function1227.bin</filename>  
+        <checksum alg="CRC-32"/>  
+        <block index="1"> 
+            <start_address>0x10000</start_address>  
+            <size>0x18f54</size> 
+        </block>  
+        <block index="2"> 
+            <start_address>0x20007000</start_address>  
+            <size>0x8</size> 
+        </block> 
+    </image> 
+</xl4_pkg_update_install>
